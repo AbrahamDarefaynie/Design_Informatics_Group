@@ -207,7 +207,7 @@
     {
       "code": "sensor-bdf764cf2f",
       "name": "Sensor bdf764cf2f",
-	  "groupName": "Free",
+      "groupName": "Free",
       "location": {
         "x": 6.037659874289012,
         "y": -5.2941076911338385,
@@ -217,76 +217,92 @@
       "id": 22
     },
     {
-      "code": "sensor-dcca107661",
-      "name": "Sensor dcca107661",
-	  "groupName": "Free",
+      "code": "sensor-a132a2618e",
+      "name": "Sensor a132a2618e",
       "location": {
-        "x": -11.44067659380178,
-        "y": 3.4548815768422116,
-        "z": 8.618120745174135
+        "x": 10.020308189109274,
+        "y": -16.40442608025192,
+        "z": 8.676356263643385
       },
-      "objectId": 4165,
-      "id": 23
+      "objectId": 4399,
+      "id": 27
     },
     {
-      "code": "sensor-ab39d58dc1",
-      "name": "Sensor ab39d58dc1",
-	  "groupName": "Free",
+      "code": "sensor-61662bdca1",
+      "name": "Sensor 61662bdca1",
       "location": {
-        "x": -15.971484504471489,
-        "y": 3.880119040883104,
-        "z": 8.359780089869696
+        "x": 16.742945316334524,
+        "y": -16.286744636622824,
+        "z": 8.307011083274531
       },
-      "objectId": 4201,
-      "id": 24
-    },
-    {
-      "code": "sensor-24b49ec086",
-      "name": "Sensor 24b49ec086",
-	  "groupName": "Free",
-      "location": {
-        "x": -39.59075355298344,
-        "y": 1.459632785762459,
-        "z": 5.643932916922482
-      },
-      "objectId": 4090,
-      "id": 25
-    },
-    {
-      "code": "sensor-ed3c0c4e67",
-      "name": "Sensor ed3c0c4e67",
-	  "groupName": "Free",
-      "location": {
-        "x": -39.59469275320365,
-        "y": 8.654953383752073,
-        "z": 5.670030766905821
-      },
-      "objectId": 4096,
-      "id": 26
-    },
-    {
-      "code": "sensor-01512258c9",
-      "name": "Sensor 01512258c9",
-	  "groupName": "Free",
-      "location": {
-        "x": 11.905751500090329,
-        "y": 5.076076736597074,
-        "z": 8.599052049740857
-      },
-      "objectId": 4417,
+      "objectId": 4363,
       "id": 28
     },
     {
-      "code": "sensor-e273664c75",
-      "name": "Sensor e273664c75",
-	  "groupName": "Free",
+      "code": "sensor-042fbc5368",
+      "name": "Sensor 042fbc5368",
       "location": {
-        "x": 17.130177374940327,
-        "y": 3.953237759769765,
-        "z": 8.280523490255996
+        "x": 23.094777209369383,
+        "y": -16.308242592507078,
+        "z": 7.786640570363959
       },
-      "objectId": 4381,
+      "objectId": 4327,
       "id": 29
+    },
+    {
+      "code": "sensor-655012f4c2",
+      "name": "Sensor 655012f4c2",
+      "location": {
+        "x": 29.779429609892595,
+        "y": -16.435877127596747,
+        "z": 7.0577990635415775
+      },
+      "objectId": 4291,
+      "id": 30
+    },
+    {
+      "code": "sensor-a766577714",
+      "name": "Sensor a766577714",
+      "location": {
+        "x": -10.02276749068423,
+        "y": -16.40419995418967,
+        "z": 8.676255798957703
+      },
+      "objectId": 4147,
+      "id": 31
+    },
+    {
+      "code": "sensor-d78a48976b",
+      "name": "Sensor d78a48976b",
+      "location": {
+        "x": -16.5611106945309,
+        "y": -16.30388984949026,
+        "z": 8.319448257067513
+      },
+      "objectId": 4183,
+      "id": 32
+    },
+    {
+      "code": "sensor-53a8f14c23",
+      "name": "Sensor 53a8f14c23",
+      "location": {
+        "x": -23.26052148702251,
+        "y": -16.29037503964277,
+        "z": 7.770744294826585
+      },
+      "objectId": 4219,
+      "id": 33
+    },
+    {
+      "code": "sensor-df50aa14f4",
+      "name": "Sensor df50aa14f4",
+      "location": {
+        "x": -29.875607807715305,
+        "y": -16.4041999951607,
+        "z": 7.045915865771822
+      },
+      "objectId": 4255,
+      "id": 34
     }
   ],
   "channels": [

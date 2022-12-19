@@ -3,12 +3,21 @@ import { initViewer, loadModel, adjustPanelStyle } from './viewer.js';
 import { initTimeline } from './timeline.js';
 import { MyDataView } from './dataview.js';
 import './sensormanager.js';
+//updated- imported
+import './EditorExt.js';
+import './RobotExt.js';
 
+
+
+//updated-commented
 const FORGE_MODEL_URN = 'dXJuOmFkc2sub2JqZWN0czpvcy5vYmplY3Q6YWIxMjM0LzA5MjlDYWJsZVR5cGUucnZ0';
 //const FORGE_MODEL_VIEW = 'e4baebbb-4ad6-8223-7f6a-cad4f0bb354a';
 const FORGE_MODEL_DEFAULT_FLOOR_INDEX = 2;
 const DEFAULT_TIMERANGE_START = new Date('2022-01-01');
 const DEFAULT_TIMERANGE_END = new Date('2022-01-30');
+
+//Moji Kinetic
+//const position = viewer.getposition();
 
 const IOT_EXTENSION_IDS = ['IoT.SensorList', 'IoT.SensorDetail', 'IoT.SensorSprites', 'IoT.SensorHeatmaps'];
 const IOT_PANEL_STYLES = {
@@ -20,6 +29,24 @@ const IOT_PANEL_STYLES = {
 let dataView = new MyDataView();
 await dataView.init({ start: DEFAULT_TIMERANGE_START, end: DEFAULT_TIMERANGE_END });
 let extensions = [];
+
+//Moji Kinetic
+// const divID = 'MyViewerDiv';
+// let extensionArray = [];
+// let viewerApp = new Autodesk.Viewing.ViewingApplication(divID);
+// let viewer = null;
+// let config3d = {
+//     extensions: extensionArray
+// };
+
+
+// Autodesk.Viewing.Initializer(options, function onInitialized() {
+//      viewerApp.registerViewer(viewerApp.k3D, Autodesk.Viewing.Private.GuiViewer3D, config3d);
+//      viewerApp.loadDocument(documentId, onDocumentLoadSuccess, onDocumentLoadFailure);
+// });
+//Moji Kinetic
+
+
 
 async function onTimeRangeChanged(start, end) {
     await dataView.refresh({ start, end });
@@ -43,8 +70,49 @@ function onCurrentChannelChanged(channelId) {
     extensions.forEach(ext => ext.currentChannelID = channelId);
 }
 
+
+//Moji Kinetic
+//Init after the viewer is ready
+// function onDocumentLoadSuccess() {
+//     let viewables = viewerApp.bubble.search({
+//         'type': 'geometry'
+//     });
+//     if (viewables.length === 0) {
+//         console.error('Document contains no viewables.');
+//         return;
+//     }
+//     // Choose any of the available viewables
+//     viewerApp.selectItem(viewables[0].data, onItemLoadSuccess, onItemLoadFail);
+
+// }
+
+// function onDocumentLoadFailure(viewerErrorCode) {
+//     console.error('onDocumentLoadFailure() - errorCode:' + viewerErrorCode);
+// }
+
+// function onItemLoadSuccess(active_viewer, item) {
+//     console.log('Document loaded successfully');
+//     viewer = active_viewer;
+
+//     viewer.loadExtension('EditorExtension').then(
+//         function(myExtension) {
+
+//             myExtension.setExtensionParams("RobotExtension", "/public/RobotExt.js");
+//         })
+// }
+// function onItemLoadFail(errorCode) {
+//     console.error('onItemLoadFail() - errorCode:' + errorCode);
+// }
+//Moji Kinetic
+
+
+
+
+
+
 initTimeline(document.getElementById('timeline'), onTimeRangeChanged, onTimeMarkerChanged);
 const viewer = await initViewer(document.getElementById('preview'), IOT_EXTENSION_IDS.concat(['Iot.SensorManager', 'Autodesk.AEC.LevelsExtension']));
+//updated- parameter changed 
 //loadModel(viewer, FORGE_MODEL_URN, FORGE_MODEL_VIEW);
 //console.log("load");
 loadModel(viewer, FORGE_MODEL_URN);
@@ -92,4 +160,15 @@ viewer.addEventListener(Autodesk.Viewing.GEOMETRY_LOADED_EVENT, async function (
     viewer.getExtension('IoT.SensorList').onSensorClicked = (sensorId) => onCurrentSensorChanged(sensorId);
     viewer.getExtension('IoT.SensorSprites').onSensorClicked = (sensorId) => onCurrentSensorChanged(sensorId);
     viewer.getExtension('IoT.SensorHeatmaps').onChannelChanged = (channelId) => onCurrentChannelChanged(channelId);
+	
+	//updated- extension loader added 
+    //viewer.loadExtension('EditorExtension').then(
+        //    function(myExtension) {
+
+      //         myExtension.setExtensionParams("RobotExtension", "/RobotExt.js");
+
+    //       });
+    viewer.loadExtension('RobotExtension');
+    //viewer.impl.setPostProcessParameter('RobotExtension');
+    viewer.loadDocumentNode('RobotExtension')
 });
